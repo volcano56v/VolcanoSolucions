@@ -2,32 +2,32 @@ fn main() {
     /*Dato pro: Si necesitas manejar números astronómicamente grandes (más que u128), existen librerías externas (crates) como num-bigint. */
 
     //esto son los posibles para usar como numeros enteros
-    let entero: i8 = -8;
-    let entero: i16 = -16;
-    let entero: i32 = -32;
-    let entero: i64 = -64;
-    let entero: i128 = -128;
+    let _entero: i8 = -8;
+    let _entero: i16 = -16;
+    let _entero: i32 = -32;
+    let _entero: i64 = -64;
+    let _entero: i128 = -128;
 
-    let entero: u8 = 8;
-    let entero: u16 = 16;
-    let entero: u32 = 32;
-    let entero: u64 = 64;
-    let entero: u128 = 128;
+    let _entero: u8 = 8;
+    let _entero: u16 = 16;
+    let _entero: u32 = 32;
+    let _entero: u64 = 64;
+    let _entero: u128 = 128;
 
     //supongo que esto es para saber el largo
-    let hola: isize;
-    let hola: usize;
+    let _hola: isize;
+    let _hola: usize;
 
     //estos son los float
-    let flotante: f32 = 0.32;
-    let flotante: f64 = 0.64;
+    let _flotante: f32 = 0.32;
+    let _flotante: f64 = 0.64;
 
     //los booleanos
-    let booleano: bool = true;
-    let booleano: bool = false;
+    let _booleano: bool = true;
+    let _booleano: bool = false;
 
     //caracteres
-    let caracter: char = 'H';
+    let _caracter: char = 'H';
 
     //texto
     let texto: &str = "Hola Mundo";
@@ -47,8 +47,8 @@ fn main() {
 
 
 
-    let meses = ["Enero", "Febrero", "Marzo"];
-    let numeros: [i32; 5] = [1, 2, 3, 4, 5]; // [tipo; cantidad]
+    let _meses = ["Enero", "Febrero", "Marzo"];
+    let _numeros: [i32; 5] = [1, 2, 3, 4, 5]; // [tipo; cantidad]
 
 
 }
