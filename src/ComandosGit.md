@@ -17,10 +17,22 @@ git restore archivo.js*
 borrar ramas en el servidor
 git push origin --delete nombre-de-la-rama
 
-
+borrar ramas en local
 git branch -d nombre-de-la-rama
+
+borrar ramas en local forzandolo
 git branch -D nombre-de-la-rama
 
 
 borrar ramas locales que no exiten en el servidor
 git fetch --prune
+git remote prune origin --dry-run
+
+
+git clone enlace_al_repo
+
+git add .
+
+git commit -m "este es un mensaje"
+
+git push
