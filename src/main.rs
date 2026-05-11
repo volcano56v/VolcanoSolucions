@@ -31,10 +31,21 @@ fn main() {
 
     //texto
     let texto: &str = "Hola Mundo";
+    print!("{}",texto);
+    print!("{texto}");
+
 
     let mi_tupla: (i32, f64, u8) = (500, 6.4, 1);
     let (x, y, z) = mi_tupla; // Desestructuración para obtener los valores
     println!("El valor de y es: {}", y);
+    //Esto es más la forma tradicional
+    println!("El valor de x es: {}, el valor de y es: {}, el valor de z es: {}. Esto es todo, esto es solo un mensaje extra", x, y, z);
+    //truco para rust 1.58+, esto solo fucniona desde la version antentes mencionada desde adelante
+    println!("X es: {x}, Y es: {y}, Z es: {z}. Mensaje extra.");
+    println!("Numero es: {x}");
+
+
+
 
     let meses = ["Enero", "Febrero", "Marzo"];
     let numeros: [i32; 5] = [1, 2, 3, 4, 5]; // [tipo; cantidad]

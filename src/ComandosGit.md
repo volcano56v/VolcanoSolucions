@@ -36,3 +36,6 @@ git add .
 git commit -m "este es un mensaje"
 
 git push
+
+git push -u origin nombre_de_la_rama
+
