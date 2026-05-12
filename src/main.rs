@@ -48,6 +48,8 @@ fn main() {
 
 
     let _meses = ["Enero", "Febrero", "Marzo"];
+    println!("{:?}", _meses);
+    println!("{:#?}", _meses);
     let _numeros: [i32; 5] = [1, 2, 3, 4, 5]; // [tipo; cantidad]
 
 

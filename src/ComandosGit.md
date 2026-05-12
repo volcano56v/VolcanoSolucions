@@ -39,3 +39,7 @@ git push
 
 git push -u origin nombre_de_la_rama
 
+para ver el orden
+git log --oneline --graph --all
+
+
