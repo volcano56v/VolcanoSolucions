@@ -1,7 +1,10 @@
+use std::io::{self, Write};
+use std::str::FromStr;
+use std::string;
 fn main() {
     /*Dato pro: Si necesitas manejar números astronómicamente grandes (más que u128), existen librerías externas (crates) como num-bigint. */
 
-    //esto son los posibles para usar como numeros enteros
+   /* //esto son los posibles para usar como numeros enteros
     let _entero: i8 = -8;
     let _entero: i16 = -16;
     let _entero: i32 = -32;
@@ -53,4 +56,95 @@ fn main() {
     let _numeros: [i32; 5] = [1, 2, 3, 4, 5]; // [tipo; cantidad]
 
 
+    //esta es una estructura condicional
+    let edad = 18;
+
+    if edad >= 18 {
+        println!("Eres mayor de edad");
+    } else {
+        println!("Eres menor de edad");
+    }
+
+    println!("Nombre:");
+    let nombre = leer_consola();
+    println!("Hola {nombre}!");
+
+    if nombre.trim() == "Vicente" {
+    println!("Tú también dijiste hola");
+    }
+
+    let n_i32: i32 = mostrar_por_consola("este es un numero de 32 bit");*/
+
+    println!("=== MENÚ DE OPCIONES ===");
+    println!("1. Saludar");
+    println!("2. Mostrar versión de Rust");
+    println!("3. Salir");
+    println!("========================");
+
+    let opcion = pedir_opcion();
+
+    match opcion {
+    1 => println!("¡Hola!"),
+    2 => {
+        println!("Consultando al sistema operativo...");
+        
+        // Ejecuta e imprime directamente en la consola actual
+        std::process::Command::new("rustc")
+            .arg("-V")
+            .status()
+            .expect("Error al ejecutar");
+    }
+    3 => println!("Saliendo... ¡Adiós!"),
+    _ => println!("Opción no válida."),
+}
+
+}
+
+fn leer_consola() -> String {
+    let mut buffer = String::new();
+    
+    // El match revisa el resultado de la lectura
+    match std::io::stdin().read_line(&mut buffer) {
+        Ok(_) => {
+            buffer.trim().to_string()
+        }
+        Err(e) => {
+            // Si hay error, imprimimos el porqué y devolvemos algo vacío
+            println!("Hubo un error real: {e}");
+            String::new() 
+        }
+    }
+}
+
+fn mostrar_por_consola<T: FromStr>(mensaje: &str) -> T {
+    loop {
+        // 1. Imprimir el mensaje en la misma línea
+        print!("{}", mensaje);
+        io::stdout().flush().expect("Error al limpiar consola");
+
+        // 2. Leer la línea
+        let mut buffer = String::new();
+        io::stdin().read_line(&mut buffer).expect("Error al leer");
+
+        // 3. Intentar convertir al tipo T (i8, u64, f32, bool, etc.)
+        match buffer.trim().parse::<T>() {
+            Ok(valor) => return valor,
+            Err(_) => println!("Entrada inválida. Reintenta."),
+        }
+    }
+}
+
+fn pedir_opcion() -> i32 {
+    loop {
+        print!("Selecciona una opción: ");
+        io::stdout().flush().expect("Error al limpiar consola");
+
+        let mut buffer = String::new();
+        io::stdin().read_line(&mut buffer).expect("Error al leer");
+
+        match buffer.trim().parse::<i32>() {
+            Ok(num) => return num,
+            Err(_) => println!("Por favor, introduce un número válido."),
+        }
+    }
 }
